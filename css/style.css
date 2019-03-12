@@ -1,0 +1,43 @@
+table {
+	border-collapse:collapse;
+}
+
+td {
+	background-color:brown;
+    border: 3px solid white;
+    height: 80px; 
+    width: 456px; 
+    overflow: hidden;
+    white-space: nowrap;
+	font-size:80px;
+	color:#ffffff;
+	border-radius: 10px 10px 10px 10px;
+}
+.mainHeadDiv{
+    display: flex;
+    align-items: center; 
+}
+
+.mainHead{
+align-items: center;
+}
+body{
+    display:flex;
+    flex-direction: row;
+    margin: 10%;    
+    background-color: #F5E1B2;
+    border: 20%;
+    border-bottom: 30%;
+}
+h4{
+    font-family:'Times New Roman', Times, serif;
+
+}
+.gameTable{
+    align-items: center;
+    text-align: center;
+}
+#1{
+    text-align: center;
+    align-items: center;
+}

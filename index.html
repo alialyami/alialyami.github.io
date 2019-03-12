@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Tic Tac Toe Game</title>
+</head>
+<body onload="startGame()">
+  <div class="mainHeadDiv">
+  <h1 class="mainHead">Tic Tac Toe GAME</h1>
+  </div>
+<h4 class="message">Lets Start</h4>
+    <section>
+<div>
+  <button id="start" onclick="reset()">START</button>
+  </div>
+    </section>
+<section>
+    <TABLE class="gameTable" width="400" border="1" cellspacing="10" cellpadding="5"  >
+            <TR>
+              <TD id="0" onclick="nextMove(this)">X</TD>
+              <TD id="1" onclick="nextMove(this)">O</TD>
+              <TD id="2" onclick="nextMove(this)">O</TD>
+            </TR>
+            <TR>
+              <TD id="3" onclick="nextMove(this)">O</TD>
+              <TD id="4" onclick="nextMove(this)">X</TD>
+              <TD id="5" onclick="nextMove(this)">X</TD>
+            </TR>
+            <TR>
+              <TD id="6" onclick="nextMove(this)">X</TD>
+              <TD id="7" onclick="nextMove(this)">O</TD>
+              <TD id="8" onclick="nextMove(this)">X</TD>
+            </TR>
+          </TABLE>
+</section>
+
+
+        <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+        <script src="js/main.js"></script>       
+</body>
+
+</html>
+
+
