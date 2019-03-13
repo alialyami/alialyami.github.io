@@ -7,41 +7,19 @@
     <link rel="stylesheet" href="css/style.css" />
     <title>Tic Tac Toe Game</title>
 </head>
-<body onload="startGame()">
-  <div class="mainHeadDiv">
-  <h1 class="mainHead">Tic Tac Toe GAME</h1>
-  </div>
-<h4 class="message">Lets Start</h4>
-    <section>
-<div>
-  <button id="start" onclick="reset()">START</button>
-  </div>
-    </section>
-<section>
-    <TABLE class="gameTable" width="400" border="1" cellspacing="10" cellpadding="5"  >
-            <TR>
-              <TD id="0" onclick="nextMove(this)">X</TD>
-              <TD id="1" onclick="nextMove(this)">O</TD>
-              <TD id="2" onclick="nextMove(this)">O</TD>
-            </TR>
-            <TR>
-              <TD id="3" onclick="nextMove(this)">O</TD>
-              <TD id="4" onclick="nextMove(this)">X</TD>
-              <TD id="5" onclick="nextMove(this)">X</TD>
-            </TR>
-            <TR>
-              <TD id="6" onclick="nextMove(this)">X</TD>
-              <TD id="7" onclick="nextMove(this)">O</TD>
-              <TD id="8" onclick="nextMove(this)">X</TD>
-            </TR>
-          </TABLE>
-</section>
-
-
-        <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-        <script src="js/main.js"></script>       
+<body class="bodyIndex">
+    <h1 class="indexH1">Tic Tac Toe Game</h1>
+    <div style="text-align:center;">
+      <button class="playGameButton" onclick="location.href = 'page1.html'">Play Game</button>
+</div>
+    <section class="sectionIndex1">
+  <p>Play the classic Tic-Tac-Toe game (also called Noughts and Crosses) for free online with two players.</p>
+    <div>
+        <img width="130%" src="images/tic-tac-toe.jpg" alt="tic-tac-toe">
+      </div>
+    
+  </section>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script> 
+    <script src="js/main.js"></script>   
 </body>
-
 </html>
-
-

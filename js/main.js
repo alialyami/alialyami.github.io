@@ -1,104 +1,73 @@
-// $( "#start" ).click(function() {
-//     $('.gameTable').css('display','');
-//   });
-
-var cells =  [$('#0'),$('#1'),$('#2'),$('#3'),$('#4'),$('#5'),$('#6'),$('#7'),$('#8')]
-
-//if any cell clicked ==> change the cell text to (X or O)
+/*
+Tic Tac Toe Game Javascript code
+*/
+//array having each game cell as Jquery call
+var cells = [$('#0'),$('#1'),$('#2'),$('#3'),$('#4'),$('#5'),$('#6'),$('#7'),$('#8')]
+//function reset the game
 function reset(){
+        winner  =''
+        cellsClicked =0;
         for (let index = 0; index < cells.length; index++) {
-                cells[index].text('  ')    
-                
+                cells[index].text('')             
 }
 }
 var turn = 'X'
-
- var start = ''
+var start = ''
+//function to reset the game once it load
 function startGame(){
-        // console.log($(cell[]).text())//= 'it is '+turn+'turn'
 for (let index = 0; index < cells.length; index++) {
-        cells[index].text(' ')   
-        start = 'yes'; 
-        // console.log(cells[0].text())
+        cells[index].text('')   
+        start = 'yes';  
 }
 }
-function withComputer(){
-        
-}
-
-
+var winner = '';
+//function to check if player win
+function checkForWinner(turn) {
+        if((cells[0].text() == turn && cells[1].text() == turn && cells[2].text() == turn) ||(cells[3].text() == turn && cells[4].text() == turn && cells[5].text() == turn) || (cells[6].text() == turn && cells[7].text() == turn && cells[8].text() == turn)
+            || (cells[0].text() == turn && cells[3].text() == turn && cells[6].text() == turn) ||(cells[1].text() == turn && cells[4].text() == turn && cells[7].text() == turn)
+            || (cells[2].text() == turn && cells[5].text() == turn && cells[8].text() == turn) ||(cells[0].text() == turn && cells[4].text() == turn && cells[8].text() == turn)
+            || (cells[2].text() == turn && cells[4].text() == turn && cells[6].text() == turn)){
+            //assign the argument player to winner variable
+           swal("the winner is "+turn);
+            winner = turn;
+            }
+    }
+var cellsClicked = 0
+//fuction being called once the game cell or square clicked
 function nextMove(id){
+                if(winner == '' && cellsClicked == 9){
+                swal("Draw !! Play again")    
+                           }
+
                 if(winner ==''){
+                        if(id.innerText == ''){
                 if(start == 'yes'){
                  id.innerText=turn;
+                 cellsClicked++;
                  start = 'no'
-
                                }
                 if(start =='no' && turn == 'X'){
 
                         id.innerText=turn;
+                        cellsClicked++;
                         checkForWinner(turn)
                         turn ='O'
                        $('.message').text("it is "+turn+" turn") ;
+                       return;
                         
                 }
                 else if(start =='no' && turn == 'O'){
 
                         id.innerText=turn;
+                        cellsClicked++
                         checkForWinner(turn)
                         turn ='X'
                       $('.message').text("it is "+turn+" turn") ;
+                      return;
                         
                 }
-        } else {
-                alert(winner+" already won!  click to start again")
         }
-}    
-
-
-// playerOne = ""
-// playerTwo = ""
-
-
-
-
-// // $( "#0" ).click(function() {
-// //         $( "#0" ).text() = Math.floor(Math.random() * (+max - +min)) + +min;
-// //       });
-
-
-//       var random =Math.floor(Math.random() * (+max - +min)) + +min;
-
-
-
-//       var min='X'; 
-//       var max='O';  
-//       var random =Math.floor(Math.random() * (+max - +min)) + +min; 
-//       document.write("Random Number Generated : " + random ); 
-
-winner = ""
-//check for winner if player playing with X symbol
-function checkForWinner(turn) {
-    //var cells =  [$('#0').text(),$('#1').text(),$('#2').text(),$('#3').text(),$('#4').text(),$('#5').text(),$('#6').text(),$('#7').text(),$('#8').text()]
-    //             0 ,1, 2, 3, 4, 5, 6, 7, 8
-    if((cells[0].text() == turn && cells[1].text() == turn && cells[2].text() == turn) ||(cells[3].text() == turn && cells[4].text() == turn && cells[5].text() == turn) || (cells[6].text() == turn && cells[7].text() == turn && cells[8].text() == turn)
-        || (cells[0].text() == turn && cells[3].text() == turn && cells[6].text() == turn) ||(cells[1].text() == turn && cells[4].text() == turn && cells[7].text() == turn)
-        || (cells[2].text() == turn && cells[5].text() == turn && cells[8].text() == turn) ||(cells[0].text() == turn && cells[4].text() == turn && cells[8].text() == turn)
-        || (cells[2].text() == turn && cells[4].text() == turn && cells[6].text() == turn)){
-        winner = turn; //assign the argument player to winner variable
-        alert("the winner is "+turn) ;
-        winner = turn
-
+        } if(winner != '') {
+                swal(winner+" already won!  click Reset to start again")
         }
-}
-// var checkForWinnerForO = function (player,params) {
-//     var cells =  [$('#0').text(),$('#1').text(),$('#2').text(),$('#3').text(),$('#4').text(),$('#5').text(),$('#6').text(),$('#7').text(),$('#8').text()]
-//     //             0 ,1, 2, 3, 4, 5, 6, 7, 8
-//         if(cells[0] == "O" && cells[2] == "O" && cells[3] == "O" ||cells[4] == "O" && cells[5] == "O" && cells[6] == "O" || cells[7] == "O" && cells[8] == "O" && cells[9] == "O"
-//         || cells[0] == "O" && cells[3] == "O" && cells[6] == "O" ||cells[1] == "O" && cells[4] == "O" && cells[7] == "O"
-//         || cells[2] == "O" && cells[5] == "O" && cells[8] == "O" ||cells[2] == "O" && cells[5] == "O" && cells[8] == "O"
-//         || cells[0] == "O" && cells[4] == "O" && cells[8] == "O" ||cells[0] == "O" && cells[4] == "O" && cells[8] == "O"
-//         || cells[6] == "O" && cells[4] == "O" && cells[2] == "O" ){
-//         winner = player; //assign the argument player to winner variable
-//                 }
-//         }
+}  
