@@ -5,5 +5,12 @@ Project #1: Tic Tac Toe Game
 
 **built with HTML, CSS and Javascript.**
 
+- Coming features
+
+Play with computer.
+
+costomize the game icons.
+
+
 
 
